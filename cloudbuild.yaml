@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - builds
+  - submit 
+  - --tag=gcr.io/$PROJECT_ID/$REPO_NAME
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - run
+    - deploy
+    - --image=gcr.io/$PROJECT_ID/$REPO_NAME
+    - --platform managed
