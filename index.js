@@ -5,6 +5,7 @@ app.get('/hw', (req, res) => {
   const name = process.env.NAME || 'World';
   console.log('Hello world log');
   console.log('Another log');
+  console.log('Last log');
   res.status(200).send(`Hello ${name}!`);
 });
 
