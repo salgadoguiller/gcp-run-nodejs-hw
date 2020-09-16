@@ -3,7 +3,8 @@ const app = express();
 
 app.get('/hw', (req, res) => {
   const name = process.env.NAME || 'World';
-  console.log('Hello world');
+  console.log('Hello world log');
+  console.log('Another log');
   res.status(200).send(`Hello ${name}!`);
 });
 
