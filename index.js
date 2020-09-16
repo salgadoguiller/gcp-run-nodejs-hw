@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/get', (req, res) => {
+app.get('/hw', (req, res) => {
   const name = process.env.NAME || 'World';
   res.status(200).send(`Hello ${name}!`);
 });
 
-app.post('/post', (req, res) => {
+app.post('/hw', (req, res) => {
   const data = req.body;
   console.log(JSON.stringify(data));
 
