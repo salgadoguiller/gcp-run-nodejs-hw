@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 
-app.get('/hw', (req, res) => {
+app.get('/get', (req, res) => {
   const name = process.env.NAME || 'World';
   res.status(200).send(`Hello ${name}!`);
 });
 
-app.post('/hw', (req, res) => {
+app.post('/post', (req, res) => {
   const data = req.body;
   console.log(JSON.stringify(data));
 
