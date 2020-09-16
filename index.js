@@ -1,5 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/get', (req, res) => {
   const name = process.env.NAME || 'World';
@@ -7,7 +10,6 @@ app.get('/get', (req, res) => {
 });
 
 app.post('/post', (req, res) => {
-  JSON.stringify(req);
   const data = req.body;
   console.log(JSON.stringify(data));
 
