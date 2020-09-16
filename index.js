@@ -7,6 +7,7 @@ app.get('/get', (req, res) => {
 });
 
 app.post('/post', (req, res) => {
+  JSON.stringify(req);
   const data = req.body;
   console.log(JSON.stringify(data));
 
