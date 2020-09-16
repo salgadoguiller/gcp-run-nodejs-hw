@@ -1,8 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-
 const app = express();
-app.use(bodyParser);
+app.use(express.json());
 
 app.get('/hw', (req, res) => {
   const name = process.env.NAME || 'World';
@@ -11,7 +9,6 @@ app.get('/hw', (req, res) => {
 
 app.post('/hw', (req, res) => {
   const data = req.body;
-  console.log('Data:');
   console.log(JSON.stringify(data));
 
   const name = data.name;
