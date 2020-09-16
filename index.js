@@ -11,12 +11,14 @@ app.get('/hw', (req, res) => {
 
 app.post('/hw', (req, res) => {
   const data = req.body;
+  console.log('Data:');
   console.log(JSON.stringify(data));
 
   const name = data.name;
 
   if (!name) {
     res.status(400).send('Bad request');
+    return;
   }
 
   res.status(200).send(`Hello ${name}!`);
