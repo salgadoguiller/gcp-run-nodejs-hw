@@ -3,9 +3,19 @@ const app = express();
 
 app.get('/hw', (req, res) => {
   const name = process.env.NAME || 'World';
-  console.log('Hello world log');
-  console.log('Another log');
-  console.log('Last log');
+  res.status(200).send(`Hello ${name}!`);
+});
+
+app.post('/hw', (req, res) => {
+  const data = req.body;
+  console.log(JSON.stringify(data));
+
+  const name = data.name;
+
+  if (!name) {
+    res.status(400).send('Bad request');
+  }
+
   res.status(200).send(`Hello ${name}!`);
 });
 
